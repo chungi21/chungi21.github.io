@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jinny's Portfolio - Hello Jinny's World</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #575757;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    h2 {
+      font-size: 1.9em;
+      line-height: 1.5em;
+      color:#fff;
+      background-color:  #b80b13;
+      padding-left: 10px;
+    }
+
+    h3 {
+      font-size: 1.75em;
+      line-height: 1.5em;
+      color:#222222;
+      padding-left: 10px;
+    }
+
+    .wrapper{
+      padding-right: 20em;
+      padding-top: 20px;
+    }
+
+    .container {
+        margin: 0 auto;
+        max-width: calc(100% - 4.5em);
+        width: 45em;
+        
+    }
+
+    .wrapper .container {
+      padding: 2.5em 0;
+    }
+
+    /* 사이드바 스타일 */
+    .sidebar {
+      text-align: center;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 20em;
+      height: 100%;
+      background-color: #b80b13;
+      color: white;
+      padding-top: 60px;
+      transition: transform 0.3s ease;
+      z-index: 1000;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      padding: 16px;
+      text-decoration: none;
+    }
+
+    .sidebar a:hover {
+      background-color: #222;
+    }
+
+    .navbar{
+      display: none;
+      background-color: #b80b13;
+      color: #fff;
+    }
+
+
+
+    .navbar-brand a, .navbar-toggler{
+      color: #fff ;
+    }
+
+    .navbar-toggler{
+      border: none;
+      padding: 0px;
+    }
+
+    /* 간격 조정*/
+    .section_padding {
+      padding : 2.5em 0;
+    }
+
+    .padding_left_10 {
+      padding-left: 10px;
+    }
+
+    .padding_left_16 {
+      padding-left: 16px;
+    }
+
+    .padding_rignt_16 {
+      padding-right: 16px;
+    }
+
+    .padding_top_16 {
+      padding-top: 16px;
+    }
+    
+    .margin_bottom_50 {
+      margin-bottom: 50px;
+    }
+
+    .margin_bottom_40 {
+      margin-bottom: 40px;
+    }
+
+    .margin_bottom_30 {
+      margin-bottom: 30px;
+    }
+
+    .margin_bottom_20 {
+      margin-bottom: 20px;
+    }
+
+    .margin_bottom_15 {
+      margin-bottom: 15px;
+    }
+
+    .margin_bottom_0 {
+      margin-bottom: 0px;
+    }
+
+    .margin_bottom_10 {
+      margin-bottom: 10px;
+    }
+
+    /* Intro */
+    #Intro h2 {
+      color: #b80b13;
+      margin: 0 0 0.4em 0;
+      font-size: 3.5em;
+      background-color: #fff;
+    }
+
+    #Intro p {
+      font-size: 18px;
+    }
+
+    /* Portfolio */
+    #Portfolio .card {
+      border-radius: 0;
+    }
+ 
+    #Portfolio .card .col-md-7 .card-body {
+      padding-left: 0;
+      padding-top: 12px;
+    }
+
+    /* 닫기 버튼 */
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      display: none;
+    }
+
+    /* 모바일 전용 스타일 */
+    @media (max-width: 992px) {
+      .wrapper{
+        padding-right: 0;
+      }
+
+      .sidebar {
+        transform: translateX(100%);
+      }
+
+      .sidebar.active {
+        transform: translateX(0);
+      }
+
+
+      .navbar{
+        display: block;
+      }
+
+      .close-btn {
+        display: block;
+      }
+
+
+    }
+
+    @media (max-width: 767px) {
+      #Portfolio .card .col-md-7 .card-body {
+        padding-left: 16px;
+        padding-top: 0px;
+      }
+
+    }
+
+    @media (max-width: 600px) {
+      .display-none-600 {
+        display: none;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- 햄버거 아이콘 -->
+  <div class="navbar">
+    <div class="container">
+      <div class="navbar-brand"><a href="/">Jinny</a></div>
+      
+      <button class="navbar-toggler " onclick="toggleSidebar()" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        ☰
+      </button>
+    </div>
+  </div>
+  
+
+  <!-- 사이드바 -->
+  <div class="sidebar" id="sidebar">
+    <div class="close-btn" onclick="toggleSidebar()">✕</div>
+    <h1><a href="/">Jinny's World</a></h1>
+    <a href="#Intro">Hello</a>
+    <a href="#Career">Career</a>
+    <a href="#Tech_Stack">Tech Stack</a>
+    <a href="#Portfolio">Portfolio</a>
+    <a href="#Certificates">Certificates</a>
+    <a href="#Contact">Contact</a>
+  </div>
+  <!-- Sidebar -->
+
+
+  <!-- Main content -->
+  <div class="wrapper">
+    <div class="container">
+      <section id="Intro" class="section_padding">
+        <div class="margin_bottom_40">
+          <h2>Hello,<br>Jinny's World</h2>
+          <p class="padding_left_10">
+            <b>
+            완벽은 노력에서 비롯된다고 믿습니다.<br/>
+            저는 꾸준한 학습과 성장을 통해 더 나은 개발자가 되기를 추구하며,<br class="display-none-600">
+            새로운 기술을 탐구하거나 기존 로직을 개선하여 성능을 향상시키는 일에 흥미를 느낍니다.<br/>
+            </b>
+          </p>
+        </div>
+
+      </section>
+      
+      <section id="Career" class="section_padding">
+        <div>
+          <h2 class="margin_bottom_15">Career</h3>
+          <div class="margin_bottom_10">
+            <img src="https://img.shields.io/badge/리본알파-333333?style=for-the-badge&logoColor=white"/>
+          </div>
+          <div class="padding_left_10">
+            - 스타트업 웹/앱 플랫폼을 개발하는 회사로 2021.3 ~ 2024.11 까지 근무<br/>
+            - PHP 기반 웹 백엔드 및 퍼블리싱 업무 수행<br/>
+            - 입사 초기 웹 디자이너/웹 퍼블리셔 → 백엔드 개발자 → 개발팀 PM으로 성장<br/>
+            - 다양한 프로젝트에 참여하며 기획 문서 작성, 서버 세팅, 배포 등 실무 전반 경험<br/>
+            - 스타트업 특성상 개발 외에도 멀티태스킹 기반의 실무 능력을 쌓음<br/>
+          </div>
+
+        </div>
+      </section>
+      
+      <section id="Tech_Stack" class="section_padding">
+        <div>
+          <h2 class="margin_bottom_20">Tech Stack</h2>  
+          <h3 class="margin_bottom_10">Backend</h3>
+          <div class="margin_bottom_20 padding_left_10">
+            <img class="margin_bottom_10" src="https://img.shields.io/badge/Java-333333?style=for-the-badge&logo=java&logoColor=white"/>
+            <img class="margin_bottom_10" src="https://img.shields.io/badge/PHP-333333?style=for-the-badge&logo=php&logoColor=white"/>
+            <img class="margin_bottom_10" src="https://img.shields.io/badge/Spring-333333?style=for-the-badge&logo=spring&logoColor=white"/>
+            <img class="margin_bottom_10" src="https://img.shields.io/badge/Spring%20Boot-333333?style=for-the-badge&logo=springboot&logoColor=white"/>
+            <img class="margin_bottom_10" src="https://img.shields.io/badge/Hibernate-333333?style=for-the-badge&logo=hibernate&logoColor=white"/>
+            <img class="margin_bottom_10" src="https://img.shields.io/badge/MySQL-333333?style=for-the-badge&logo=mysql&logoColor=white"/>
+            <img class="margin_bottom_10" src="https://img.shields.io/badge/H2-333333?style=for-the-badge&logo=h2database&logoColor=white"/>
+          </div>  
+          
+          <h3 class="margin_bottom_10 ">Frontend</h3>
+          <div class="padding_left_10">
+            <img class="margin_bottom_10" src="https://img.shields.io/badge/JSP-333333?style=for-the-badge&logo=java&logoColor=white"/>
+            <img class="margin_bottom_10" src="https://img.shields.io/badge/HTML5-333333?style=for-the-badge&logo=html5&logoColor=white"/>
+            <img class="margin_bottom_10" src="https://img.shields.io/badge/CSS3-333333?style=for-the-badge&logo=css3&logoColor=white"/>
+            <img class="margin_bottom_10" src="https://img.shields.io/badge/JavaScript-333333?style=for-the-badge&logo=javascript&logoColor=white"/>
+            <img class="margin_bottom_10" src="https://img.shields.io/badge/Bootstrap-333333?style=for-the-badge&logo=bootstrap&logoColor=white"/>
+            <img class="margin_bottom_10" src="https://img.shields.io/badge/Thymeleaf-333333?style=for-the-badge&logo=thymeleaf&logoColor=white"/>
+          </div>
+        </div>    
+      </section>
+      
+
+      <section id="Portfolio" class="section_padding">
+        <h2 class="margin_bottom_20">Portfolio</h2>
+
+        <a href="https://github.com/chungi21/dreamingAnimal">
+          <div class="card mb-3">
+            <div class="row g-0">
+              <h5 class="card-title margin_bottom_0 padding_left_16 padding_right_16 padding_top_16">동물 보호 플랫폼 - Dreaming Animals</h5>
+            </div>
+            <div class="row g-0">
+              <div class="col-md-5">
+                <div class="card-body">
+                  <img src="./images/Portfolio_1.png" class="img-fluid " alt="...">
+                </div>
+              </div>
+              <div class="col-md-7">
+                <div class="card-body">
+                  <p class="card-text">
+                    유기동물을 위한 보호소 정보와 소통 공간을 제공하는 따뜻한 동물 보호 플랫폼입니다.<br>
+                    Spring Boot, JPA, Spring Security, 카카오 지도 API, 다음 주소 검색 API를 활용하여 개발하였으며,
+                    보호소 등록 및 위치 표시는 카카오 지도와 다음 주소 검색 API를 통해 구현하였습니다.<br>
+                    게시판을 통해 보호동물 등록, 보호소 찾기, 커뮤니티 기능을 이용할 수 있습니다.  
+                  </p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://github.com/chungi21/thisvsthat">
+          <div class="card mb-3">
+            <div class="row g-0">
+              <h5 class="card-title margin_bottom_0 padding_left_16 padding_right_16 padding_top_16">Yes or No 투표 플랫폼 - This or That</h5>
+            </div>
+            <div class="row g-0">
+              <div class="col-md-5">
+                <div class="card-body">
+                  <img src="./images/Portfolio_2.png" class="img-fluid " alt="...">
+                </div>
+              </div>
+              <div class="col-md-7">
+                <div class="card-body">
+                  
+                  <p class="card-text">
+                    사용자들이 다양한 고민을 쉽고 재미있게 해결할 수 있도록 돕는, 올인(All-in) 또는 올아웃(All-out) 방식의 투표 플랫폼입니다.<br>
+                    게시판 CRUD 기능을 기반으로 한 첫 번째 팀 프로젝트로, Spring Boot, JPA, JWT를 활용하여 개발하였고, 무한스크롤, JWT 기반 사용자 인증, GitHub 협업을 통해 팀원 간의 효율적인 개발 환경을 구축하였습니다.
+                  </p>
+                  <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+
+      </section>
+      
+
+      <section  id="Certificates" class="section_padding">
+        <h2 class="margin_bottom_20">Certificates</h2>
+        <div>
+          <img class="margin_bottom_10" src="https://img.shields.io/badge/정보처리기사-575757?style=for-the-badge&logoColor=white"/>
+         <img class="margin_bottom_10" src="https://img.shields.io/badge/웹디자인기능사-575757?style=for-the-badge&logoColor=white"/>
+        </div>
+      </section>
+
+      
+      <section  id="Contact" class="section_padding">
+        <h2 class="margin_bottom_20">Contact</h2>
+        <div class="padding_left_10">
+          <div>Email : wlsgml01562@gmail.com</div>
+          <div>Github : https://github.com/chungi21</div>
+          <div>Blog : https://luckygirljinny.tistory.com/</div> 
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+  function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('active');
+  }
+  </script>
+
+</body>
+</html>
